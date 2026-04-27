@@ -27,6 +27,7 @@
                     <li><a href="generated-character.html">Generated Character</a></li>
                 </ul>
             </nav>
+            <button id="dark-mode-btn">🌙 Dark Mode</button>
         </div>
     </header>
 
@@ -35,6 +36,11 @@
         <p class="intro-text">
             These are important terms used throughout our character creator and beginner guide.
         </p>
+
+                <div class="kw-search-wrap">
+            <input type="text" id="keyword-search" placeholder="Search keywords..." class="kw-search-input">
+        </div>
+        <p id="kw-no-results" style="display:none;color:#c0392b;margin-top:1rem;">No keywords match your search.</p>
 
         <dl class="keyword-list">
             <dt>Armor Class (AC)</dt>
@@ -116,5 +122,6 @@
             <p>CS Project • Dungeons & Dragons Beginner Website • 2026</p>
         </div>
     </footer>
+    <script src="site.js"></script>
 </body>
 </html>
