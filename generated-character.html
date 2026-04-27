@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD Character Sheet</title>
+    <link rel="stylesheet" href="character-sheet-style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main>
+
+<div class="stat-roller-bar">
+    <button id="roll-stats-btn" class="stat-roll-btn">🎲 Roll Ability Scores</button>
+    <span class="stat-roller-hint">Uses the 4d6-drop-lowest method</span>
+</div>
+
+
+    <!-- Ability Scores -->
+
+    <div class="top-row">
+        <div class="score"><div class="box"></div><span>Strength</span></div>            
+        <div class="score"><div class="box"></div><span>Dexterity</span></div>
+        <div class="score"><div class="box"></div><span>Constitution</span></div>
+        <h1>Dungeons and Dragons</h1>
+        <div class="score"><div class="box"></div><span>Intelligence</span></div>            
+        <div class="score"><div class="box"></div><span>Wisdom</span></div>
+        <div class="score"><div class="box"></div><span>Charisma</span></div>
+    </div>
+
+
+    <div class="grid">
+
+        <!-- Column 1 -->
+        <div class="col">
+            <div class="box-section">
+                <h2>Saving Throws</h2>
+                <ul>
+                    <li><span class="dot"></span> ___ Strength</li>
+                    <li><span class="dot"></span> ___ Dexterity</li>
+                    <li><span class="dot"></span> ___ Constitution</li>
+                    <li><span class="dot"></span> ___ Intelligence</li>
+                    <li><span class="dot"></span> ___ Wisdom</li>
+                    <li><span class="dot"></span> ___ Charisma</li>
+                </ul>
+            </div>
+            <div class="box-section grow">
+                <h2>Skills</h2>
+                <ul>
+                    <li><span class="dot"></span> ___ Acrobatics <small>(DEX)</small></li>
+                    <li><span class="dot"></span> ___ Animal Hdlig <small>(WIS)</small></li>
+                    <li><span class="dot"></span> ___ Arcana <small>(INT)</small></li>
+                    <li><span class="dot"></span> ___ Athletics <small>(STR)</small></li>
+                    <li><span class="dot"></span> ___ Deception <small>(CHA)</small></li>
+                    <li><span class="dot"></span> ___ History <small>(INT)</small></li>
+                    <li><span class="dot"></span> ___ Insight <small>(WIS)</small></li>
+                    <li><span class="dot"></span> ___ Intimidation <small>(CHA)</small></li>
+                    <li><span class="dot"></span> ___ Investigation <small>(INT)</small></li>
+                    <li><span class="dot"></span> ___ Medicine <small>(WIS)</small></li>
+                    <li><span class="dot"></span> ___ Nature <small>(INT)</small></li>
+                    <li><span class="dot"></span> ___ Perception <small>(WIS)</small></li>
+                    <li><span class="dot"></span> ___ Performance <small>(CHA)</small></li>
+                    <li><span class="dot"></span> ___ Persuasion <small>(CHA)</small></li>
+                    <li><span class="dot"></span> ___ Religion <small>(INT)</small></li>
+                    <li><span class="dot"></span> ___ Sleight of Hand <small>(DEX)</small></li>
+                    <li><span class="dot"></span> ___ Stealth <small>(DEX)</small></li>
+                    <li><span class="dot"></span> ___ Survival <small>(WIS)</small></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="col">
+            <div class="box-section">
+                <h2>Hit Points</h2>
+                <div class="row">
+                    <div class="heart-box">
+                        <img src="heart-image.png" alt="heart">
+                        <span>Max HP</span>
+                    </div>
+                    <div class="heart-box">
+                        <img src="heart-image.png" alt="heart">
+                        <span>Current</span>
+                    </div>
+                    <div class="heart-box">
+                        <img src="heart-image.png" alt="heart">
+                        <span>Temp</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="box-section"><h2>Passive Perception</h2></div>
+                <div class="box-section"><h2>Proficiency Bonus</h2></div>
+            </div>
+
+            <div class="box-section">
+                <h2>Inspiration</h2>
+            </div>
+
+            <div class="row">
+                <div class="SAI-box"><div class="SAI"></div><span>Speed</span></div>
+                <div class="SAI-box"><div class="SAI"></div><span>Armor Class</span></div>
+                <div class="SAI-box"><div class="SAI"></div><span>Initiative</span></div>
+            </div>
+
+            <div class="row">
+                <div class="box-section">
+                    <h2>Death Saves</h2>
+                    <p>Successes <span class="dot"></span><span class="dot"></span><span class="dot"></span></p>
+                    <p>Failures &nbsp;&nbsp;<span class="dot"></span><span class="dot"></span><span class="dot"></span></p>
+                </div>
+                <div class="box-section">
+                    <h2>Spell Casting</h2>
+                    <p>Ability</p>
+                    <p>Save DC</p>
+                    <p>Attack</p>
+                </div>
+            </div>
+
+            <div class="row grow">
+                <div class="box-section">
+                    <h2>Other Proficiencies &amp; Languages</h2>
+                </div>
+                <div class="box-section">
+                    <h2>Hit Dice</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="col">
+            <div class="box-section">
+                <p>Character Name</p>
+                <p>Race</p>
+                <p>Class</p>
+                <p>Level</p>
+                <p>Background</p>
+                <p>Alignment</p>
+            </div>
+            <div class="box-section grow">
+                <h2>Attacks and Spellcasting</h2>
+                <table>
+                    <thead>
+                        <tr><th>Name</th><th>ATK Bonus</th><th>Damage/Type</th></tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="col">
+            <div class="row">
+                <div class="box-section personality-box"><h2>Personality Traits</h2></div>
+                <div class="box-section personality-box"><h2>Ideals</h2></div>
+                <div class="box-section personality-box"><h2>Bonds</h2></div>
+                <div class="box-section personality-box"><h2>Flaws</h2></div>
+            </div>
+            <div class="row grow">
+                <div class="box-section"><h2>Equipment</h2></div>
+                <div class="box-section"><h2>Features &amp; Traits</h2></div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+    <script src="site.js"></script>
+</body>
+</html>

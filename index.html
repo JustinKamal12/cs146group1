@@ -1,0 +1,91 @@
+<!-- Index Page -->
+
+<!-- W3 checked -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Beginner Portal</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <h1 class="site-title">D&D Beginner Portal</h1>
+        <nav aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="create-character.html">Create Character</a></li>
+                <li><a href="how-to-play.html">How to Play</a></li>
+                <li><a href="keywords.html">Keywords</a></li>
+                <li><a href="generated-character.html">Generated Character</a></li>
+            </ul>
+        </nav>
+            <button id="dark-mode-btn">🌙 Dark Mode</button>
+    </div>
+</header>
+
+<main>
+
+<div class="hero container">
+    <h2>Start Your Dungeons & Dragons Adventure</h2>
+    <p>
+        This beginner-friendly website helps new players learn the basics of Dungeons & Dragons,
+        understand important game terms, and generate their first character.
+    </p>
+
+    <div class="hero-buttons">
+        <a class="button" href="create-character.html">Create a Character</a>
+        <a class="button secondary" href="how-to-play.html">Learn How to Play</a>
+    </div>
+</div>
+
+<div class="features container">
+
+<article class="feature-card">
+<h3>Character Creator</h3>
+<p>
+Use our guided quiz to generate a D&D character suited to your playstyle.
+</p>
+</article>
+
+<article class="feature-card">
+<h3>How to Play</h3>
+<p>
+Learn the core rules of Dungeons & Dragons including combat, roleplay, and dice mechanics.
+</p>
+</article>
+
+<article class="feature-card">
+<h3>Keywords</h3>
+<p>
+Understand common D&D terminology like Armor Class, Hit Points, and Saving Throws.
+</p>
+</article>
+
+</div>
+
+
+<div class="dice-roller-widget">
+    <button id="dice-btn" class="button">🎲 Roll d20</button>
+    <div class="dice-result-display" id="dice-result">—</div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>CS Project • Dungeons & Dragons Beginner Website • 2026</p>
+    </div>
+</footer>
+
+    <script src="site.js"></script>
+</body>
+</html>
