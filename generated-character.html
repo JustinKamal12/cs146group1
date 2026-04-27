@@ -1,3 +1,7 @@
+<!-- Lucas -->
+
+<!-- Lucas -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +18,17 @@
 
 <main>
 
-    <!-- Ability Scores -->
+    <!-- Ability Scores (top row) -->
+    <!-- JavaScript will fill in the numbers inside each .box -->
 
     <div class="top-row">
-        <div class="score"><div class="box"></div><span>Strength</span></div>            
-        <div class="score"><div class="box"></div><span>Dexterity</span></div>
-        <div class="score"><div class="box"></div><span>Constitution</span></div>
+        <div class="score"><div class="box" id="score-Strength"></div><span>Strength</span></div>            
+        <div class="score"><div class="box" id="score-Dexterity"></div><span>Dexterity</span></div>
+        <div class="score"><div class="box" id="score-Constitution"></div><span>Constitution</span></div>
         <h1>Dungeons and Dragons</h1>
-        <div class="score"><div class="box"></div><span>Intelligence</span></div>            
-        <div class="score"><div class="box"></div><span>Wisdom</span></div>
-        <div class="score"><div class="box"></div><span>Charisma</span></div>
+        <div class="score"><div class="box" id="score-Intelligence"></div><span>Intelligence</span></div>            
+        <div class="score"><div class="box" id="score-Wisdom"></div><span>Wisdom</span></div>
+        <div class="score"><div class="box" id="score-Charisma"></div><span>Charisma</span></div>
     </div>
 
 
@@ -129,6 +134,242 @@
         <!-- Column 3 -->
         <div class="col">
             <div class="box-section">
+                <!-- JavaScript will fill in each of these spans -->
+                <p>Character Name: <span id="sheet-name"></span></p>
+                <p>Race: <span id="sheet-species"></span></p>
+                <p>Class: <span id="sheet-class"></span></p>
+                <p>Level: <span id="sheet-level"></span></p>
+                <p>Background: <span id="sheet-background"></span></p>
+                <p>Alignment: <span id="sheet-alignment"></span></p>
+            </div>
+            <div class="box-section grow">
+                <h2>Attacks and Spellcasting</h2>
+                <table>
+                    <thead>
+                        <tr><th>Name</th><th>ATK Bonus</th><th>Damage/Type</th></tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="col">
+            <div class="row">
+                <!-- JavaScript will fill in personality, ideals, bonds, flaws -->
+                <div class="box-section personality-box">
+                    <h2>Personality Traits</h2>
+                    <p id="sheet-traits"></p>
+                </div>
+                <div class="box-section personality-box">
+                    <h2>Ideals</h2>
+                    <p id="sheet-ideals"></p>
+                </div>
+                <div class="box-section personality-box">
+                    <h2>Bonds</h2>
+                    <p id="sheet-bonds"></p>
+                </div>
+                <div class="box-section personality-box">
+                    <h2>Flaws</h2>
+                    <p id="sheet-flaws"></p>
+                </div>
+            </div>
+            <div class="row grow">
+                <div class="box-section"><h2>Equipment</h2></div>
+                <div class="box-section"><h2>Features &amp; Traits</h2></div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<script>
+// ============================================================
+//  Character Sheet Population Script
+//  This script reads the character data saved by quiz.js
+//  and fills in the character sheet with the player's choices.
+// ============================================================
+
+// Wait for the page to finish loading
+window.addEventListener("load", function () {
+
+    // Read the character data from localStorage
+    var savedData = localStorage.getItem("dndCharacter");
+
+    // If there's no data (player came here without doing the quiz), stop
+    if (!savedData) {
+        return;
+    }
+
+    // Convert the saved text back into a JavaScript object
+    var character = JSON.parse(savedData);
+
+    // ---- Fill in the basic info (Column 3) ----
+    document.getElementById("sheet-name").textContent       = character.name;
+    document.getElementById("sheet-species").textContent    = character.species;
+    document.getElementById("sheet-class").textContent      = character.charClass;
+    document.getElementById("sheet-level").textContent      = character.level;
+    document.getElementById("sheet-background").textContent = character.background;
+    document.getElementById("sheet-alignment").textContent  = character.alignment;
+
+    // ---- Fill in the ability scores (top row) ----
+    // Loop through each stat and put the number in the right box
+    var stats = character.stats;
+    var statNames = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"];
+
+    for (var i = 0; i < statNames.length; i++) {
+        var statName = statNames[i];
+        var scoreBox = document.getElementById("score-" + statName);
+
+        if (scoreBox) {
+            scoreBox.textContent = stats[statName];
+        }
+    }
+
+    // ---- Fill in personality fields (Column 4) ----
+    document.getElementById("sheet-traits").textContent = character.personality.traits;
+    document.getElementById("sheet-ideals").textContent = character.personality.ideals;
+    document.getElementById("sheet-bonds").textContent  = character.personality.bonds;
+    document.getElementById("sheet-flaws").textContent  = character.personality.flaws;
+
+});
+</script>
+
+</body>
+</html>
+
+ <!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD Character Sheet</title>
+    <link rel="stylesheet" href="character-sheet-style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main>
+
+    Ability Scores
+
+    <div class="top-row">
+        <div class="score"><div class="box"></div><span>Strength</span></div>            
+        <div class="score"><div class="box"></div><span>Dexterity</span></div>
+        <div class="score"><div class="box"></div><span>Constitution</span></div>
+        <h1>Dungeons and Dragons</h1>
+        <div class="score"><div class="box"></div><span>Intelligence</span></div>            
+        <div class="score"><div class="box"></div><span>Wisdom</span></div>
+        <div class="score"><div class="box"></div><span>Charisma</span></div>
+    </div>
+
+
+    <div class="grid">
+
+        Column 1
+        <div class="col">
+            <div class="box-section">
+                <h2>Saving Throws</h2>
+                <ul>
+                    <li><span class="dot"></span> ___ Strength</li>
+                    <li><span class="dot"></span> ___ Dexterity</li>
+                    <li><span class="dot"></span> ___ Constitution</li>
+                    <li><span class="dot"></span> ___ Intelligence</li>
+                    <li><span class="dot"></span> ___ Wisdom</li>
+                    <li><span class="dot"></span> ___ Charisma</li>
+                </ul>
+            </div>
+            <div class="box-section grow">
+                <h2>Skills</h2>
+                <ul>
+                    <li><span class="dot"></span> ___ Acrobatics <small>(DEX)</small></li>
+                    <li><span class="dot"></span> ___ Animal Hdlig <small>(WIS)</small></li>
+                    <li><span class="dot"></span> ___ Arcana <small>(INT)</small></li>
+                    <li><span class="dot"></span> ___ Athletics <small>(STR)</small></li>
+                    <li><span class="dot"></span> ___ Deception <small>(CHA)</small></li>
+                    <li><span class="dot"></span> ___ History <small>(INT)</small></li>
+                    <li><span class="dot"></span> ___ Insight <small>(WIS)</small></li>
+                    <li><span class="dot"></span> ___ Intimidation <small>(CHA)</small></li>
+                    <li><span class="dot"></span> ___ Investigation <small>(INT)</small></li>
+                    <li><span class="dot"></span> ___ Medicine <small>(WIS)</small></li>
+                    <li><span class="dot"></span> ___ Nature <small>(INT)</small></li>
+                    <li><span class="dot"></span> ___ Perception <small>(WIS)</small></li>
+                    <li><span class="dot"></span> ___ Performance <small>(CHA)</small></li>
+                    <li><span class="dot"></span> ___ Persuasion <small>(CHA)</small></li>
+                    <li><span class="dot"></span> ___ Religion <small>(INT)</small></li>
+                    <li><span class="dot"></span> ___ Sleight of Hand <small>(DEX)</small></li>
+                    <li><span class="dot"></span> ___ Stealth <small>(DEX)</small></li>
+                    <li><span class="dot"></span> ___ Survival <small>(WIS)</small></li>
+                </ul>
+            </div>
+        </div>
+
+        Column 2
+        <div class="col">
+            <div class="box-section">
+                <h2>Hit Points</h2>
+                <div class="row">
+                    <div class="heart-box">
+                        <img src="heart-image.png" alt="heart">
+                        <span>Max HP</span>
+                    </div>
+                    <div class="heart-box">
+                        <img src="heart-image.png" alt="heart">
+                        <span>Current</span>
+                    </div>
+                    <div class="heart-box">
+                        <img src="heart-image.png" alt="heart">
+                        <span>Temp</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="box-section"><h2>Passive Perception</h2></div>
+                <div class="box-section"><h2>Proficiency Bonus</h2></div>
+            </div>
+
+            <div class="box-section">
+                <h2>Inspiration</h2>
+            </div>
+
+            <div class="row">
+                <div class="SAI-box"><div class="SAI"></div><span>Speed</span></div>
+                <div class="SAI-box"><div class="SAI"></div><span>Armor Class</span></div>
+                <div class="SAI-box"><div class="SAI"></div><span>Initiative</span></div>
+            </div>
+
+            <div class="row">
+                <div class="box-section">
+                    <h2>Death Saves</h2>
+                    <p>Successes <span class="dot"></span><span class="dot"></span><span class="dot"></span></p>
+                    <p>Failures &nbsp;&nbsp;<span class="dot"></span><span class="dot"></span><span class="dot"></span></p>
+                </div>
+                <div class="box-section">
+                    <h2>Spell Casting</h2>
+                    <p>Ability</p>
+                    <p>Save DC</p>
+                    <p>Attack</p>
+                </div>
+            </div>
+
+            <div class="row grow">
+                <div class="box-section">
+                    <h2>Other Proficiencies &amp; Languages</h2>
+                </div>
+                <div class="box-section">
+                    <h2>Hit Dice</h2>
+                </div>
+            </div>
+        </div>
+
+        Column 3
+        <div class="col">
+            <div class="box-section">
                 <p>Character Name</p>
                 <p>Race</p>
                 <p>Class</p>
@@ -146,7 +387,7 @@
             </div>
         </div>
 
-        <!-- Column 4 -->
+        Column 4
         <div class="col">
             <div class="row">
                 <div class="box-section personality-box"><h2>Personality Traits</h2></div>
@@ -165,4 +406,5 @@
 </main>
 
 </body>
-</html>
+</html> 
+-->
