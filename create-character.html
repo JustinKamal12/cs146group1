@@ -11,6 +11,92 @@
     <title>Create a Character</title>
     <link rel="stylesheet" href="style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="site-title">D&D Beginner Portal</h1>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="create-character.html" class="active">Create Character</a></li>
+                    <li><a href="how-to-play.html">How to Play</a></li>
+                    <li><a href="keywords.html">Keywords</a></li>
+                    <li><a href="generated-character.html">Generated Character</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- SCREEN 1: Player enters their character name and starts the quiz -->
+        <section id="setup-screen" class="card">
+
+            <h2>Create Your Character</h2>
+
+            <label for="player-name">Character Name</label>
+            <input id="player-name" type="text" placeholder=" --- ">
+
+            <button class="button">Start Character Quiz</button>
+
+        </section>
+
+        <!-- SCREEN 2: The quiz form is built here by JavaScript (quiz.js) -->
+        <!-- JavaScript will clear and replace the content inside this section -->
+        <section id="quiz-screen" class="card">
+
+            <h2>Character Quiz (example)</h2>
+
+            <p id="question-text">
+                How do you intend to impact the world?
+            </p>
+
+            <div id="options-container">
+
+                <div class="option-button">
+                    With martial prowess and cold steel.
+                </div>
+
+                <div class="option-button">
+                    With ancient magic and cosmic secrets.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>CS Project • Dungeons & Dragons Beginner Website • 2026</p>
+        </div>
+    </footer>
+
+    <!-- Load the quiz script at the bottom so the page HTML loads first -->
+    <script src="quiz.js"></script>
+
+</body>
+
+</html>
+<!-- W3 checked -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Character</title>
+    <link rel="stylesheet" href="style.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
